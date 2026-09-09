@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_app/data_models/onboarding_loader.dart';
 import 'package:smooth_app/data_models/preferences/user_preferences.dart';
@@ -7,7 +6,6 @@ import 'package:smooth_app/database/local_database.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
 import 'package:smooth_app/pages/onboarding/onboarding_flow_navigator.dart';
 import 'package:smooth_app/pages/onboarding/v2/onboarding_bottom_hills.dart';
-import 'package:smooth_app/resources/app_animations.dart';
 import 'package:smooth_app/themes/smooth_theme_colors.dart';
 import 'package:smooth_app/widgets/smooth_scaffold.dart';
 import 'package:smooth_app/widgets/text/text_highlighter.dart';
@@ -21,7 +19,7 @@ class OnboardingHomePage extends StatelessWidget {
     return SmoothBrightnessOverride(
       brightness: Brightness.dark,
       child: SmoothScaffold(
-        backgroundColor: const Color(0xFFE3F3FE),
+        backgroundColor: const Color(0xFFFFFBF0),
         body: Provider<OnboardingConfig>.value(
           value: OnboardingConfig._(MediaQuery.sizeOf(context)),
           child: Stack(
@@ -91,7 +89,7 @@ class _OnboardingWelcomePageContent extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ),
-          const Expanded(flex: 37, child: _SunAndCloud()),
+          const Expanded(flex: 37, child: _ShuddhScoreLogo()),
           Expanded(
             flex: 45,
             child: FractionallySizedBox(
@@ -132,68 +130,17 @@ class _OnboardingWelcomePageContent extends StatelessWidget {
   }
 }
 
-class _SunAndCloud extends StatefulWidget {
-  const _SunAndCloud();
+class _ShuddhScoreLogo extends StatelessWidget {
+  const _ShuddhScoreLogo();
 
   @override
-  State<_SunAndCloud> createState() => _SunAndCloudState();
-}
-
-class _SunAndCloudState extends State<_SunAndCloud>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    )..addListener(() => setState(() {}));
-    _animation = Tween<double>(begin: -1.0, end: 1.0).animate(_controller);
-    _controller.repeat(reverse: true);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final TextDirection textDirection = Directionality.of(context);
-
-    return RepaintBoundary(
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          return Stack(
-            children: <Widget>[
-              Positioned.directional(
-                top: constraints.maxHeight * 0.3,
-                bottom: constraints.maxHeight * 0.2,
-                start: (_animation.value * 161.0) * 0.3,
-                textDirection: textDirection,
-                child: SvgPicture.asset('assets/onboarding/cloud.svg'),
-              ),
-              const Align(
-                alignment: Alignment.center,
-                child: SunAnimation(type: SunAnimationType.loop),
-              ),
-              Positioned.directional(
-                top: constraints.maxHeight * 0.22,
-                bottom: constraints.maxHeight * 0.35,
-                end: (_animation.value * 40.0) - 31,
-                textDirection: textDirection,
-                child: SvgPicture.asset('assets/onboarding/cloud.svg'),
-              ),
-            ],
-          );
-        },
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
+  Widget build(BuildContext context) => Center(
+    child: Image.asset(
+      'assets/app/shuddhscore_logo.png',
+      width: 220,
+      fit: BoxFit.contain,
+    ),
+  );
 }
 
 // TODO(g123k): Move elsewhere when the onboarding will be redesigned

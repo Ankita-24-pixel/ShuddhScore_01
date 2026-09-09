@@ -49,15 +49,15 @@ enum OnboardingPage {
     switch (this) {
       case OnboardingPage.NOT_STARTED:
       case OnboardingPage.HOME_PAGE:
-        return const Color(0xFFDFF4FF);
+        return const Color(0xFFFFFBF0);
       case OnboardingPage.WELCOME:
         return const Color(0xFFFCFCFC);
       case OnboardingPage.HEALTH_CARD_EXAMPLE:
-        return const Color(0xFFFFF1D1);
+        return const Color(0xFFFFF4CC);
       case OnboardingPage.ECO_CARD_EXAMPLE:
-        return const Color(0xFFE3F6DE);
+        return const Color(0xFFFFF8E1);
       case OnboardingPage.PREFERENCES_PAGE:
-        return const Color(0xFFEBF1FF);
+        return const Color(0xFFFFFBF0);
       case OnboardingPage.PERMISSIONS_PAGE:
         return const Color(0xFFEBF1FF);
       case OnboardingPage.ONBOARDING_COMPLETE:

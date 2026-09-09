@@ -124,13 +124,13 @@ class _LegalInformationHeader extends StatelessWidget {
                     : extension.primaryDark,
                 borderRadius: const BorderRadius.vertical(top: ROUNDED_RADIUS),
               ),
-              child: const Padding(
+              child: Padding(
                 padding: EdgeInsetsDirectional.symmetric(
                   horizontal: SMALL_SPACE,
                   vertical: MEDIUM_SPACE,
                 ),
-                child: SvgPicture(
-                  AssetBytesLoader('assets/app/logo_text_white.svg.vec'),
+                child: Image.asset(
+                  'assets/app/shuddhscore_logo.png',
                   fit: BoxFit.contain,
                 ),
               ),

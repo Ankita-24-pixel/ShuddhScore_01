@@ -1,9 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_app/generic_lib/design_constants.dart';
-import 'package:smooth_app/helpers/app_helper.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
 import 'package:smooth_app/pages/onboarding/next_button.dart';
 import 'package:smooth_app/pages/onboarding/onboarding_flow_navigator.dart';
@@ -49,15 +47,10 @@ class WelcomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           SizedBox(height: screenSize.height * .05),
-                          SvgPicture.asset(
-                            'assets/onboarding/title.svg',
-                            height: screenSize.height * .10,
-                            package: AppHelper.APP_PACKAGE,
-                          ),
-                          SvgPicture.asset(
-                            'assets/onboarding/globe.svg',
-                            height: screenSize.height * .20,
-                            package: AppHelper.APP_PACKAGE,
+                          Image.asset(
+                            'assets/app/shuddhscore_logo.png',
+                            width: screenSize.width * .78,
+                            fit: BoxFit.contain,
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.only(

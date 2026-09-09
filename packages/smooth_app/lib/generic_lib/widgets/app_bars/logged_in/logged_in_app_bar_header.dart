@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_app/generic_lib/design_constants.dart';
 import 'package:smooth_app/generic_lib/widgets/app_bars/app_bar_constanst.dart';
@@ -106,10 +105,9 @@ class UserProfilePicture extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsetsDirectional.all(SMALL_SPACE),
             child: Center(
-              child: SvgPicture.asset(
-                lightTheme
-                    ? 'assets/app/release_icon_light_transparent_no_border.svg'
-                    : 'assets/app/release_icon_dark_transparent_no_border.svg',
+              child: Image.asset(
+                'assets/app/shuddhscore_logo.png',
+                fit: BoxFit.cover,
               ),
             ),
           ),

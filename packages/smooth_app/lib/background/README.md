@@ -1,13 +1,13 @@
-## Debugging Steps for Background Tasks in Smooth App
+﻿## Debugging Steps for Background Tasks in Smooth App
 
 ### 1. **Check Server Responsiveness**
-- **Is the Open Food Facts server slow or down?**
+- **Is the ShuddhScore server slow or down?**
   - Test server reachability: Try accessing the API or website in a browser.
   - Look for server status pages or community reports of outages.
   - If the server is slow, background tasks may timeout or fail with “Server timeout” or similar errors (see: `background_task_error_server_time_out`).
 
 ### 2. **Product Movement Between Projects**
-- **Has the product/barcode moved to a different Open Products Facts instance (e.g., from Open Food Facts to Open Beauty Facts)?**
+- **Has the product/barcode moved to a different Open Products Facts instance (e.g., from ShuddhScore to Open Beauty Facts)?**
   - Check which project the barcode belongs to on the web.
   - If moved, background tasks may fail or be rejected by the server.
 
@@ -151,3 +151,4 @@
 The background tasks system is a robust, queue-based mechanism for processing uploads, downloads, and other operations asynchronously. It uses local persistence, deduplication, and error handling to ensure reliability, but is currently single-threaded, has some rough edges in error recovery and task deduplication, and has ongoing areas for cleanup and improvement.
 
 If you need a more detailed breakdown of a specific part (e.g., how uploads are handled, or how to add new task types), let me know!
+

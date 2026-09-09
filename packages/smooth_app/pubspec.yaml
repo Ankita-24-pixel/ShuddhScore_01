@@ -1,5 +1,5 @@
 name: smooth_app
-description: The next generation of the Open Food Facts mobile apps.
+description: The next generation of the ShuddhScore mobile apps.
 version: 0.0.0+734
 publish_to: "none"
 
@@ -120,6 +120,7 @@ dev_dependencies:
   flutter_lints: 6.0.0
   openfoodfacts_flutter_lints:
     git: https://github.com/openfoodfacts/openfoodfacts_flutter_lints.git
+  flutter_launcher_icons: 0.14.4
 
 # 'flutter pub run flutter_native_splash:create' to update
 flutter_native_splash:
@@ -144,6 +145,13 @@ flutter_native_splash:
     image: "assets/app/release_icon_transparent_70pct_1152x1152.png"
     icon_background_color: "#FFFFFF"
     icon_background_color_dark: "#333333"
+
+# flutter_launcher_icons configuration for generating launcher icons
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/app/shuddhscore_logo.png"
+  remove_alpha_ios: true
 
 flutter:
   generate: true

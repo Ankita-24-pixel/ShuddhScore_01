@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_app/helpers/collections_helper.dart';
 
-const Color seed = Color(0xFF99460D);
+const Color seed = Color(0xFFD4A017);
 
 const ColorScheme lightColorScheme = ColorScheme(
   brightness: Brightness.light,
-  primary: Color.fromRGBO(133, 116, 108, 1.0),
-  inversePrimary: Color(0xFF341100),
+  primary: Color(0xFFC58A00),
+  inversePrimary: Color(0xFF7A5200),
   onPrimary: Color(0xFFFFFFFF),
-  secondary: Color(0xFFEDE0DB),
+  secondary: Color(0xFFFFF1BF),
   onSecondary: Color(0xFF000000),
   error: Color(0xFFEB5757),
   onError: Color(0xFFFFFFFF),
@@ -18,10 +18,10 @@ const ColorScheme lightColorScheme = ColorScheme(
 
 const ColorScheme darkColorScheme = ColorScheme(
   brightness: Brightness.dark,
-  primary: Color(0xFFFFFFFF),
-  inversePrimary: Color(0xFFFFFFFF),
+  primary: Color(0xFFFFD166),
+  inversePrimary: Color(0xFFFFD166),
   onPrimary: Color(0xFF000000),
-  secondary: Color(0xFFA08D84),
+  secondary: Color(0xFF8A6500),
   onSecondary: Color(0xFFFFFFFF),
   error: Color(0xFFEB5757),
   onError: Color(0xFFFFFFFF),
@@ -54,7 +54,7 @@ const Color HIGH_CONTRAST_TEXT_COLOR = Color(0xffffffff);
 const Color Test = Colors.white10;
 
 const String COLOR_DEFAULT_NAME = 'Default';
-const Color COLOR_DEFAULT = Color(0xff85746c);
+const Color COLOR_DEFAULT = Color(0xffD4A017);
 const Color COLOR_BLUE = Colors.blue;
 const Color COLOR_CYAN = Color(0xff0097a7);
 const Color COLOR_GREEN = Color(0xff009b52);

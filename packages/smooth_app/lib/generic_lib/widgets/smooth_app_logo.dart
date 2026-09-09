@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:smooth_app/themes/theme_provider.dart';
 
 /// An animated logo which can depend on [SmoothSharedAnimationController]
 /// to ensure animations are synced
@@ -62,10 +60,12 @@ class SmoothAppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SvgPicture.asset(
-      context.lightTheme()
-          ? 'assets/app/release_icon_transparent.svg'
-          : 'assets/app/release_icon_dark_transparent_no_border.svg',
+    return SizedBox.square(
+      dimension: 128,
+      child: Image.asset(
+        'assets/app/shuddhscore_logo.png',
+        fit: BoxFit.contain,
+      ),
     );
   }
 }

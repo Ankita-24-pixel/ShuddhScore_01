@@ -1,4 +1,4 @@
-import 'package:device_info_plus/device_info_plus.dart';
+﻿import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
@@ -146,7 +146,7 @@ class ConnectRoot extends PreferencesRoot {
           appLocalizations: appLocalizations,
           body: emailBody,
           subject:
-              '${appLocalizations.help_with_openfoodfacts} (Feedback on the Open Food Facts app)',
+              '${appLocalizations.help_with_openfoodfacts} (Feedback on the ShuddhScore app)',
         );
       },
     );
@@ -260,7 +260,7 @@ class ConnectRoot extends PreferencesRoot {
       appLocalizations: appLocalizations,
       body: emailBody,
       subject:
-          '${appLocalizations.help_with_openfoodfacts} (Help with Open Food Facts)',
+          '${appLocalizations.help_with_openfoodfacts} (Help with ShuddhScore)',
       attachmentPaths: includeLogs == true ? Logs.logFilesPaths : null,
     );
   };
@@ -340,3 +340,4 @@ class ConnectRoot extends PreferencesRoot {
     return buffer.toString();
   }
 }
+

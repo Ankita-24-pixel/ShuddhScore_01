@@ -51,14 +51,10 @@ class ScanSearchCard extends StatelessWidget {
           children: <Widget>[
             LayoutBuilder(
               builder: (_, BoxConstraints constraints) {
-                return SvgPicture(
-                  AssetBytesLoader(
-                    lightTheme
-                        ? 'assets/app/logo_text_black.svg.vec'
-                        : 'assets/app/logo_text_white.svg.vec',
-                  ),
+                return Image.asset(
+                  'assets/app/shuddhscore_logo.png',
                   width: math.min(311.0, constraints.maxWidth * 0.85),
-                  semanticsLabel:
+                  semanticLabel:
                       localizations.homepage_main_card_logo_description,
                 );
               },

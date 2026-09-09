@@ -867,7 +867,7 @@ abstract class AppLocalizations {
   /// label for a tile that is on the contribute tile
   ///
   /// In en, this message translates to:
-  /// **'Help improve Open Food Facts in your country'**
+  /// **'Help improve ShuddhScore in your country'**
   String get help_improve_country;
 
   /// Button label: For sign out
@@ -1359,7 +1359,7 @@ abstract class AppLocalizations {
   /// No description provided for @contribute_join_skill_pool.
   ///
   /// In en, this message translates to:
-  /// **'Contribute your skills to Open Food Facts. Join the skill pool!'**
+  /// **'Contribute your skills to ShuddhScore. Join the skill pool!'**
   String get contribute_join_skill_pool;
 
   /// No description provided for @contribute_share_header.
@@ -2138,7 +2138,7 @@ abstract class AppLocalizations {
   /// No description provided for @new_product_title_pictures_details.
   ///
   /// In en, this message translates to:
-  /// **'Please take the following photos and the Open Food Facts engine can work out the rest!'**
+  /// **'Please take the following photos and the ShuddhScore engine can work out the rest!'**
   String get new_product_title_pictures_details;
 
   /// No description provided for @new_product_title_misc.
@@ -2699,7 +2699,7 @@ abstract class AppLocalizations {
   /// **'Unknown'**
   String get product_image_details_date_unknown;
 
-  /// Description for accessibility of the Open Food Facts logo on the homepage
+  /// Description for accessibility of the ShuddhScore logo on the homepage
   ///
   /// In en, this message translates to:
   /// **'Welcome to Open Food Facts'**
@@ -3501,7 +3501,7 @@ abstract class AppLocalizations {
   /// User login (when it's an email)
   ///
   /// In en, this message translates to:
-  /// **'Open Food Facts login: {email}'**
+  /// **'ShuddhScore login: {email}'**
   String user_profile_title_id_email(String email);
 
   /// User login (when it's an id)
@@ -5462,7 +5462,7 @@ abstract class AppLocalizations {
   /// No description provided for @prices_privacy_warning_main_message.
   ///
   /// In en, this message translates to:
-  /// **'Prices **will be public**, along with the store they refer to.\n\nThat might allow people who know about your Open Food Facts pseudonym to:\n'**
+  /// **'Prices **will be public**, along with the store they refer to.\n\nThat might allow people who know about your ShuddhScore pseudonym to:\n'**
   String get prices_privacy_warning_main_message;
 
   /// No description provided for @prices_privacy_warning_message_bullet_1.
@@ -5480,7 +5480,7 @@ abstract class AppLocalizations {
   /// No description provided for @prices_privacy_warning_sub_message.
   ///
   /// In en, this message translates to:
-  /// **'If you are uneasy with that, please change your pseudonym, or create a new Open Food Facts account and log into the app with it.'**
+  /// **'If you are uneasy with that, please change your pseudonym, or create a new ShuddhScore account and log into the app with it.'**
   String get prices_privacy_warning_sub_message;
 
   /// No description provided for @i_refuse.
@@ -7481,7 +7481,7 @@ abstract class AppLocalizations {
   /// No description provided for @faq_title_vision.
   ///
   /// In en, this message translates to:
-  /// **'The Open Food Facts Vision, Mission, Values and Programs'**
+  /// **'The ShuddhScore Vision, Mission, Values and Programs'**
   String get faq_title_vision;
 
   /// No description provided for @faq_title_install_beauty.
@@ -7511,7 +7511,7 @@ abstract class AppLocalizations {
   /// No description provided for @contact_title_pro_page.
   ///
   /// In en, this message translates to:
-  /// **'Pro? Import your products in Open Food Facts'**
+  /// **'Pro? Import your products in ShuddhScore'**
   String get contact_title_pro_page;
 
   /// No description provided for @contact_title_pro_email.
@@ -8261,13 +8261,13 @@ abstract class AppLocalizations {
   /// No description provided for @guide_open_food_facts_what_is_open_food_facts_title.
   ///
   /// In en, this message translates to:
-  /// **'What is Open Food Facts?'**
+  /// **'What is ShuddhScore?'**
   String get guide_open_food_facts_what_is_open_food_facts_title;
 
   /// Text between asterisks (eg: **My Text**) means text in bold. Please try to keep it.
   ///
   /// In en, this message translates to:
-  /// **'Open Food Facts is a **collaborative**, **free**, and **open** database of food products from around the world.'**
+  /// **'ShuddhScore is a **collaborative**, **free**, and **open** database of food products from around the world.'**
   String get guide_open_food_facts_what_is_open_food_facts_paragraph1;
 
   /// Text between asterisks (eg: **My Text**) means text in bold. Please try to keep it.
@@ -8279,7 +8279,7 @@ abstract class AppLocalizations {
   /// No description provided for @guide_open_food_facts_features_title.
   ///
   /// In en, this message translates to:
-  /// **'Features of Open Food Facts'**
+  /// **'Features of ShuddhScore'**
   String get guide_open_food_facts_features_title;
 
   /// No description provided for @guide_open_food_facts_features_arg1_title.
@@ -8663,7 +8663,7 @@ abstract class AppLocalizations {
   /// Text between asterisks (eg: **My Text**) means text in bold. Please try to keep it.
   ///
   /// In en, this message translates to:
-  /// **'Open Prices is a project to **collect and share prices of products around the world**. It\'s a publicly available dataset that can be used for research, analysis, and more. Open Prices is developed and maintained by Open Food Facts.'**
+  /// **'Open Prices is a project to **collect and share prices of products around the world**. It\'s a publicly available dataset that can be used for research, analysis, and more. Open Prices is developed and maintained by ShuddhScore.'**
   String get guide_open_prices_what_is_open_prices_paragraph1;
 
   /// Text between asterisks (eg: **My Text**) means text in bold. Please try to keep it.
@@ -8681,7 +8681,7 @@ abstract class AppLocalizations {
   /// No description provided for @guide_open_prices_how_paragraph1.
   ///
   /// In en, this message translates to:
-  /// **'**We are crowdsourcing an open-source dataset of prices**. Prices can be added by users via this web app, or via the official Open Food Facts mobile app. Retailers or third-party apps can contribute as well by using our API.'**
+  /// **'**We are crowdsourcing an open-source dataset of prices**. Prices can be added by users via this web app, or via the official ShuddhScore mobile app. Retailers or third-party apps can contribute as well by using our API.'**
   String get guide_open_prices_how_paragraph1;
 
   /// No description provided for @guide_open_prices_how_arg1_title.
@@ -8699,7 +8699,7 @@ abstract class AppLocalizations {
   /// No description provided for @guide_open_prices_why_title.
   ///
   /// In en, this message translates to:
-  /// **'Why is Open Food Facts doing this ?'**
+  /// **'Why is ShuddhScore doing this ?'**
   String get guide_open_prices_why_title;
 
   /// No description provided for @guide_open_prices_why_paragraph1.
@@ -9523,7 +9523,7 @@ abstract class AppLocalizations {
   /// No description provided for @prices_explanation_card_line1.
   ///
   /// In en, this message translates to:
-  /// **'**Open Prices** is a project to collect and share prices of products around the world 🌍. Open Prices is developed and maintained by Open Food Facts.'**
+  /// **'**Open Prices** is a project to collect and share prices of products around the world 🌍. Open Prices is developed and maintained by ShuddhScore.'**
   String get prices_explanation_card_line1;
 
   /// No description provided for @explanation_card_learn_more_button.
@@ -9931,7 +9931,7 @@ abstract class AppLocalizations {
   /// Title for the project preferences card
   ///
   /// In en, this message translates to:
-  /// **'The Open Food Facts project'**
+  /// **'The ShuddhScore project'**
   String get preferences_card_project;
 
   /// Title for the contribution preferences tile
@@ -10093,7 +10093,7 @@ abstract class AppLocalizations {
   /// This is the same text as the Discover banner on the website. Please keep the ** syntax to make the text bold.
   ///
   /// In en, this message translates to:
-  /// **'Open Food Facts is a food products database **made by everyone, for everyone**.\nYou can use it to make better food choices, and as it is **open data**, anyone can **re-use it for any purpose**.'**
+  /// **'ShuddhScore is a food products database **made by everyone, for everyone**.\nYou can use it to make better food choices, and as it is **open data**, anyone can **re-use it for any purpose**.'**
   String get preferences_legal_header;
 
   /// Title for the preferences privacy policy tile
@@ -10186,10 +10186,10 @@ abstract class AppLocalizations {
   /// **'Discover the new Nutri-Score'**
   String get tips_discover_nutriscore;
 
-  /// Subtitle for preferences tiles leading to the Open Food Facts website
+  /// Subtitle for preferences tiles leading to the ShuddhScore website
   ///
   /// In en, this message translates to:
-  /// **'On the Open Food Facts website'**
+  /// **'On the ShuddhScore website'**
   String get preferences_on_off_website_subtitle;
 
   /// Title for the preferences manage account tile
@@ -10342,10 +10342,10 @@ abstract class AppLocalizations {
   /// **'Discover the project'**
   String get preferences_faq_discover_project_title;
 
-  /// Title for discover Open Food Facts tile
+  /// Title for discover ShuddhScore tile
   ///
   /// In en, this message translates to:
-  /// **'Discover Open Food Facts'**
+  /// **'Discover ShuddhScore'**
   String get preferences_faq_discover_off_title;
 
   /// Title for discover Open Beauty Facts tile
@@ -10378,10 +10378,10 @@ abstract class AppLocalizations {
   /// **'FAQ - Frequently Asked Questions'**
   String get preferences_faq_faq_title;
 
-  /// Title for Open Food Facts NGO card
+  /// Title for ShuddhScore NGO card
   ///
   /// In en, this message translates to:
-  /// **'The Open Food Facts NGO'**
+  /// **'The ShuddhScore NGO'**
   String get preferences_faq_off_ngo_title;
 
   /// Title for information card in about app
@@ -10417,7 +10417,7 @@ abstract class AppLocalizations {
   /// Title for blog tile
   ///
   /// In en, this message translates to:
-  /// **'The Open Food Facts blog'**
+  /// **'The ShuddhScore blog'**
   String get preferences_connect_blog_title;
 
   /// Subtitle for blog tile
@@ -10597,7 +10597,7 @@ abstract class AppLocalizations {
   /// Subtitle for new products added subtile
   ///
   /// In en, this message translates to:
-  /// **'New products I added to Open Food Facts'**
+  /// **'New products I added to ShuddhScore'**
   String get preferences_contributions_new_products_subtitle;
 
   /// Title for products to be completed tile
@@ -10753,7 +10753,7 @@ abstract class AppLocalizations {
   /// Subtitle for the contribute to project navigation tile
   ///
   /// In en, this message translates to:
-  /// **'Simple ways to help Open Food Facts'**
+  /// **'Simple ways to help ShuddhScore'**
   String get preferences_page_contribute_project_subtitle;
 
   /// Subtitle for the FAQ navigation tile on preferences page
@@ -10906,10 +10906,10 @@ abstract class AppLocalizations {
   /// **'Development'**
   String get preferences_about_app_development_title;
 
-  /// Title for the Open Food Facts Labs navigation tile in preferences page
+  /// Title for the ShuddhScore Labs navigation tile in preferences page
   ///
   /// In en, this message translates to:
-  /// **'Open Food Facts Labs'**
+  /// **'ShuddhScore Labs'**
   String get preferences_page_open_food_facts_labs_title;
 
   /// Title for the account preferences root
@@ -10921,7 +10921,7 @@ abstract class AppLocalizations {
   /// Button label + pop up window title: Shows information about helping by translating
   ///
   /// In en, this message translates to:
-  /// **'Bring Open Food Facts to your language'**
+  /// **'Bring ShuddhScore to your language'**
   String get preferences_contribute_translate_header;
 
   /// No description provided for @preferences_contribute_enroll_alpha.

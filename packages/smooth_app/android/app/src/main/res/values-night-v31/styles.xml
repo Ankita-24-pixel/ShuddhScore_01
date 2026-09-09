@@ -6,7 +6,7 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowSplashScreenBackground">@color/background_splashscreen</item>
         <item name="android:windowSplashScreenBrandingImage">@drawable/logo_text</item>
-        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/shuddhscore_launcher_foreground</item>
         <item name="android:windowSplashScreenIconBackgroundColor">@color/background_splashscreen</item>
     </style>
     <!-- Theme applied to the Android Window as soon as the process has started.

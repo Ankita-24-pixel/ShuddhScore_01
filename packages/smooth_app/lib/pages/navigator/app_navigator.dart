@@ -1,4 +1,4 @@
-import 'dart:convert';
+﻿import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -574,7 +574,7 @@ class AppRoutes {
   static String get GUIDE_NOVA =>
       '/${_InternalAppRoutes._GUIDES}/${_InternalAppRoutes.GUIDE_NOVA_PAGE}';
 
-  // Guide for Open Food Facts
+  // Guide for ShuddhScore
   static String get GUIDE_OPEN_FOOD_FACTS =>
       '/${_InternalAppRoutes._GUIDES}/${_InternalAppRoutes.GUIDE_OPEN_FOOD_FACTS_PAGE}';
 
@@ -608,3 +608,4 @@ class AppRoutes {
 String _encodePath(String path) => base64Encode(utf8.encode(path));
 
 String _decodePath(String path) => utf8.decode(base64Decode(path));
+

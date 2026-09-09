@@ -1,7 +1,6 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smooth_app/helpers/num_utils.dart';
 import 'package:smooth_app/helpers/ui_helpers.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
@@ -10,7 +9,6 @@ import 'package:smooth_app/pages/homepage/homepage.dart';
 import 'package:smooth_app/resources/app_icons.dart' as icons;
 import 'package:smooth_app/themes/smooth_theme_colors.dart';
 import 'package:smooth_app/themes/theme_provider.dart';
-import 'package:vector_graphics/vector_graphics.dart';
 
 /// App logo + scan icon
 class HomePageHeaderLogo extends StatelessWidget {
@@ -143,12 +141,9 @@ class HomePageAppLogo extends StatelessWidget {
               alignment: AlignmentDirectional.centerStart,
               child: SizedBox(
                 width: imageWidth * progress.progress2(1.0, 1.0),
-                child: SvgPicture(
-                  AssetBytesLoader(
-                    'assets/app/logo_text_${context.lightTheme() ? 'black' : 'white'}.svg.vec',
-                  ),
-                  width: 311.0,
-                  height: 58.0,
+                child: Image.asset(
+                  'assets/app/shuddhscore_logo.png',
+                  fit: BoxFit.contain,
                   alignment: AlignmentDirectional.centerStart,
                 ),
               ),

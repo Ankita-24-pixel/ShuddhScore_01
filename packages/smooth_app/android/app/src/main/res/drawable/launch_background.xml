@@ -7,7 +7,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@drawable/shuddhscore_launcher_foreground" />
     </item>
 
     <item
@@ -15,7 +15,7 @@
         android:height="80dp"
         android:bottom="20dp">
         <bitmap
-            android:gravity="bottom"
+            android:gravity="center"
             android:src="@drawable/logo_text" />
     </item>
 
