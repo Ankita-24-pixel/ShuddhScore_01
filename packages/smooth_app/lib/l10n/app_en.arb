@@ -4719,6 +4719,10 @@
   "@product_page_tab_for_me": {
     "description": "Label of the for me tab on the product page"
   },
+  "product_page_edit_details": "Edit details",
+  "@product_page_edit_details": {
+    "description": "Label of the edit details button on the product page"
+  },
   "product_page_for_me_compatibility_score_title": "My compatibility",
   "@product_page_for_me_compatibility_score_title": {
     "description": "Title for the compatibility score"

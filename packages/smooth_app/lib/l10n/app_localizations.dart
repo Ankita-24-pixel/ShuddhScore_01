@@ -9440,6 +9440,12 @@ abstract class AppLocalizations {
   /// **'For me'**
   String get product_page_tab_for_me;
 
+  /// Label of the edit details button on the product page
+  ///
+  /// In en, this message translates to:
+  /// **'Edit details'**
+  String get product_page_edit_details;
+
   /// Title for the compatibility score
   ///
   /// In en, this message translates to:

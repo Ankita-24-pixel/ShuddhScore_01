@@ -193,7 +193,10 @@ class ProductPageState extends State<ProductPage>
                     child: ProductQuestionsWidget(upToDateProduct),
                   ),
           ),
-          const ProductFooter(),
+          const ProductFooter(
+            actions: <ProductFooterActionBar>[ProductFooterActionBar.edit],
+            showSettings: false,
+          ),
         ],
       ),
     );
