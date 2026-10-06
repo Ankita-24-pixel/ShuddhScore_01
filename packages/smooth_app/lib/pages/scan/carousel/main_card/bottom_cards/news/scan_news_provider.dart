@@ -51,6 +51,10 @@ class ScanNewsFeedProvider extends ValueNotifier<ScanTagLineState> {
         _userPreferences.taglineFeedDisplayedNews;
 
     for (final AppNewsFeedItem feedItem in tagLine.feed.news) {
+      if (feedItem.id.startsWith('donation_campaign_')) {
+        continue;
+      }
+
       if (taglineFeedAlreadyClickedNews.contains(feedItem.id)) {
         clickedNews.add(feedItem.news);
       } else if (taglineFeedAlreadyDisplayedNews.contains(feedItem.id)) {
@@ -58,6 +62,11 @@ class ScanNewsFeedProvider extends ValueNotifier<ScanTagLineState> {
       } else {
         unreadNews.add(feedItem.news);
       }
+    }
+
+    if (unreadNews.isEmpty && displayedNews.isEmpty && clickedNews.isEmpty) {
+      emit(const ScanTagLineStateNoContent());
+      return;
     }
 
     emit(

@@ -119,21 +119,6 @@ class PreferencesPage extends StatelessWidget {
           GithubSearchPreferenceTile(),
           ForumSearchPreferenceTile(),
         ],
-        footer: (_) => Consumer2<PreferencesRootSearchController, FocusNode>(
-          builder:
-              (
-                BuildContext context,
-                PreferencesRootSearchController controller,
-                FocusNode focusNode,
-                _,
-              ) {
-                if (controller.query?.isNotEmpty == true ||
-                    focusNode.hasFocus) {
-                  return EMPTY_WIDGET;
-                }
-                return const SocialNetworksFooter();
-              },
-        ),
       ),
     );
   }
