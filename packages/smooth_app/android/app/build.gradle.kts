@@ -49,7 +49,10 @@ android {
             signingConfig = signingConfigs.getByName("debug")
         }
         release {
-            signingConfig = signingConfigs.getByName("release")
+            // Allow locally installable release APKs without a custom keystore.
+            signingConfig = signingConfigs.getByName(
+                if (System.getenv("SIGN_STORE_PATH").isNullOrBlank()) "debug" else "release"
+            )
         }
     }
 }
