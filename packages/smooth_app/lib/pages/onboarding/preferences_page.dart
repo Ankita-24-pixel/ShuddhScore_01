@@ -13,6 +13,7 @@ import 'package:smooth_app/database/local_database.dart';
 import 'package:smooth_app/generic_lib/design_constants.dart';
 import 'package:smooth_app/helpers/app_helper.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
+import 'package:smooth_app/pages/family/family_members_page.dart';
 import 'package:smooth_app/pages/onboarding/next_button.dart';
 import 'package:smooth_app/pages/onboarding/onboarding_flow_navigator.dart';
 import 'package:smooth_app/pages/preferences/user_preferences_food.dart';
@@ -81,6 +82,7 @@ class _HelperState extends State<_Helper> {
     final UserPreferences userPreferences = context.watch<UserPreferences>();
     final AppLocalizations appLocalizations = AppLocalizations.of(context);
     final List<Widget> pageData = <Widget>[
+      const FamilySetupPrompt(),
       SvgPicture.asset(
         'assets/onboarding/preferences.svg',
         height: MediaQuery.sizeOf(context).height * .25,

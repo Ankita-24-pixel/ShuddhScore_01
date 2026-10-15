@@ -4,6 +4,7 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:smooth_app/cards/product_cards/smooth_product_image.dart';
+import 'package:smooth_app/data_models/family_profiles.dart';
 import 'package:smooth_app/data_models/preferences/user_preferences.dart';
 import 'package:smooth_app/data_models/product_preferences.dart';
 import 'package:smooth_app/generic_lib/design_constants.dart';
@@ -13,6 +14,7 @@ import 'package:smooth_app/helpers/product_cards_helper.dart';
 import 'package:smooth_app/helpers/product_compatibility_helper.dart';
 import 'package:smooth_app/helpers/ui_helpers.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
+import 'package:smooth_app/pages/family/family_product_card.dart';
 import 'package:smooth_app/pages/navigator/app_navigator.dart';
 import 'package:smooth_app/pages/product/product_type_extensions.dart';
 import 'package:smooth_app/themes/smooth_theme_colors.dart';
@@ -46,56 +48,65 @@ class SmoothProductCardItemFound extends StatelessWidget {
       ),
       child: Material(
         type: MaterialType.transparency,
-        child: IntrinsicHeight(
-          child: Row(
-            children: <Widget>[
-              const _SmoothProductItemPicture(),
-              const SizedBox(width: BALANCED_SPACE),
-              Expanded(
-                child: SizedBox(
-                  height: double.infinity,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      ConstrainedBox(
-                        constraints: BoxConstraints(
-                          minHeight:
-                              themeData.textTheme.headlineMedium!.fontSize! *
-                              2.0,
-                        ),
-                        child: Align(
-                          alignment: AlignmentDirectional.centerStart,
-                          child: Text(
-                            getProductName(product, appLocalizations),
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 2,
-                            style: const TextStyle(
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w700,
-                              height: 1.3,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            IntrinsicHeight(
+              child: Row(
+                children: <Widget>[
+                  const _SmoothProductItemPicture(),
+                  const SizedBox(width: BALANCED_SPACE),
+                  Expanded(
+                    child: SizedBox(
+                      height: double.infinity,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minHeight:
+                                  themeData
+                                      .textTheme
+                                      .headlineMedium!
+                                      .fontSize! *
+                                  2.0,
+                            ),
+                            child: Align(
+                              alignment: AlignmentDirectional.centerStart,
+                              child: Text(
+                                getProductName(product, appLocalizations),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                                style: const TextStyle(
+                                  fontSize: 17.0,
+                                  fontWeight: FontWeight.w700,
+                                  height: 1.3,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          const SizedBox(height: VERY_SMALL_SPACE),
+                          Text(
+                            getProductBrandsList(
+                                  product,
+                                  appLocalizations,
+                                ).firstOrNull ??
+                                appLocalizations.unknownBrand,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: themeData.textTheme.bodyMedium,
+                          ),
+                          const Spacer(),
+                          const _SmoothProductItemScores(),
+                        ],
                       ),
-                      const SizedBox(height: VERY_SMALL_SPACE),
-                      Text(
-                        getProductBrandsList(
-                              product,
-                              appLocalizations,
-                            ).firstOrNull ??
-                            appLocalizations.unknownBrand,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: themeData.textTheme.bodyMedium,
-                      ),
-                      const Spacer(),
-                      const _SmoothProductItemScores(),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
+            ),
+            FamilyProductChips(product: product),
+          ],
         ),
       ),
     );
@@ -115,7 +126,7 @@ class SmoothProductCardItemFound extends StatelessWidget {
 
     return MultiProvider(
       providers: <SingleChildWidget>[
-        Provider<Product>(create: (_) => product),
+        Provider<Product>.value(value: product),
         Provider<String>.value(value: heroTag),
       ],
       child: InkWell(
@@ -139,7 +150,10 @@ class _SmoothProductItemPicture extends StatelessWidget {
   Widget build(BuildContext context) {
     final Product product = context.watch<Product>();
     final double size = MediaQuery.sizeOf(context).width * 0.25;
-    final bool hasScore = product.productType == ProductType.food;
+    // Family results are shown separately below, rather than an unrelated N/A.
+    final bool hasFamily =
+        context.watch<FamilyProfiles?>()?.members.isNotEmpty ?? false;
+    final bool hasScore = product.productType == ProductType.food && !hasFamily;
     final Color borderColor;
     final Widget? scoreWidget;
 

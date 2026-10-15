@@ -14,7 +14,9 @@ import 'package:provider/single_child_widget.dart';
 import 'package:rive/rive.dart';
 import 'package:scanner_shared/scanner_shared.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_app/data_models/continuous_scan_model.dart';
+import 'package:smooth_app/data_models/family_profiles.dart';
 import 'package:smooth_app/data_models/news_feed/newsfeed_provider.dart';
 import 'package:smooth_app/data_models/preferences/user_preferences.dart';
 import 'package:smooth_app/data_models/product_preferences.dart';
@@ -115,6 +117,7 @@ class SmoothApp extends StatefulWidget {
 }
 
 late UserPreferences _userPreferences;
+late FamilyProfiles _familyProfiles;
 late ProductPreferences _productPreferences;
 late LocalDatabase _localDatabase;
 late ThemeProvider _themeProvider;
@@ -133,6 +136,7 @@ Future<bool> _init1() async {
   await setupAppNetworkConfig();
   await UserManagementProvider.mountCredentials();
   _userPreferences = await UserPreferences.getUserPreferences();
+  _familyProfiles = FamilyProfiles(await SharedPreferences.getInstance());
   _localDatabase = await LocalDatabase.getLocalDatabase();
   await _continuousScanModel.load(_localDatabase);
   _productPreferences = ProductPreferences(
@@ -216,6 +220,7 @@ class _SmoothAppState extends State<SmoothApp> {
         return MultiProvider(
           providers: <SingleChildWidget>[
             _provide<UserPreferences>(_userPreferences),
+            _provide<FamilyProfiles>(_familyProfiles),
             _provide<ProductPreferences>(_productPreferences),
             _provide<UserManagementProvider>(_userManagementProvider),
             _provide<LocalDatabase>(_localDatabase),

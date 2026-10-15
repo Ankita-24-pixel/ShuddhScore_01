@@ -4,17 +4,16 @@ import 'package:openfoodfacts/openfoodfacts.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_app/data_models/preferences/user_preferences.dart';
 import 'package:smooth_app/data_models/user_management_provider.dart';
-import 'package:smooth_app/generic_lib/design_constants.dart';
 import 'package:smooth_app/generic_lib/widgets/app_bars/logged_in/logged_in_app_bar.dart';
 import 'package:smooth_app/generic_lib/widgets/app_bars/logged_out/logged_out_app_bar.dart';
 import 'package:smooth_app/helpers/analytics_helper.dart';
 import 'package:smooth_app/helpers/launch_url_helper.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
+import 'package:smooth_app/pages/family/family_members_page.dart';
 import 'package:smooth_app/pages/food_preferences/food_preferences_page.dart';
 import 'package:smooth_app/pages/food_preferences/preferences_page_projects.dart';
 import 'package:smooth_app/pages/hunger_games/question_page.dart';
 import 'package:smooth_app/pages/preferences_v2/cards/banner/new_nutriscore_header.dart';
-import 'package:smooth_app/pages/preferences_v2/cards/footer/preferences_social_networks.dart';
 import 'package:smooth_app/pages/preferences_v2/cards/preference_card.dart';
 import 'package:smooth_app/pages/preferences_v2/roots/about_app_root.dart';
 import 'package:smooth_app/pages/preferences_v2/roots/app_settings_root.dart';
@@ -69,6 +68,13 @@ class PreferencesPage extends StatelessWidget {
           PreferenceCard(
             title: appLocalizations.preferences_page_customize_app_title,
             tiles: <PreferenceTile>[
+              const NavigationPreferenceTile(
+                leading: Icon(Icons.family_restroom),
+                title: 'My family',
+                subtitleText: 'Names, ages and personal product checks',
+                target: FamilyMembersPage(),
+                fullScreen: true,
+              ),
               ..._projects.map((PreferencesPageProjects project) {
                 final bool alreadySet = userPreferences
                     .arePreferencesSetForProject(project);

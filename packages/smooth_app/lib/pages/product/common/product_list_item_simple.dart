@@ -14,6 +14,7 @@ import 'package:smooth_app/services/smooth_services.dart';
 class ProductListItemSimple extends StatefulWidget {
   const ProductListItemSimple({
     required this.barcode,
+    super.key,
     this.onTap,
     this.onLongPress,
     this.backgroundColor,

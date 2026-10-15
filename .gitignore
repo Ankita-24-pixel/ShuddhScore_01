@@ -275,3 +275,4 @@ packages/smooth_app/ios/Runner/vls.lproj/InfoPlist.strings
 packages/smooth_app/ios/Runner/zea.lproj/InfoPlist.strings
 *.pyc
 __pycache__/
+packages/smooth_app/config/groq.local.json

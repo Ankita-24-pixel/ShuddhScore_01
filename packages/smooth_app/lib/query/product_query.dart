@@ -305,6 +305,7 @@ abstract class ProductQuery {
     ProductField.NUTRIMENT_ENERGY_UNIT,
     ProductField.ADDITIVES,
     ProductField.INGREDIENTS_ANALYSIS_TAGS,
+    ProductField.INGREDIENTS,
     ProductField.INGREDIENTS_TEXT,
     ProductField.INGREDIENTS_TEXT_ALL_LANGUAGES,
     ProductField.LABELS_TAGS,

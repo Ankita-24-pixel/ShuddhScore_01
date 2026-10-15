@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_app/generic_lib/widgets/smooth_back_button.dart';
 import 'package:smooth_app/helpers/provider_helper.dart';
+import 'package:smooth_app/pages/family/family_members_page.dart';
 import 'package:smooth_app/pages/product/common/search_helper.dart';
 import 'package:smooth_app/pages/product/common/search_preloaded_item.dart';
 import 'package:smooth_app/pages/search/search_app_bar.dart';
@@ -104,6 +105,7 @@ class _SearchPageState extends State<SearchPage> {
           ),
           body: Column(
             children: <Widget>[
+              const FamilySetupPrompt(),
               Expanded(
                 child: Consumer<SearchHelper>(
                   builder: (BuildContext context, SearchHelper searchHelper, _) {

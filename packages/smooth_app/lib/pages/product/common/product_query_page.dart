@@ -229,6 +229,7 @@ class _ProductQueryPageState extends State<ProductQueryPage>
               }
             }
             return ProductListItemSimple(
+              key: ValueKey<String>(_model.displayBarcodes[index]),
               barcode: _model.displayBarcodes[index],
             );
           },

@@ -1,2 +1,10 @@
 # Shared rules
+analyzer:
+  exclude:
+    - build/**
+    - android/**
+    - ios/**
+    - windows/**
+    - macos/**
+    - linux/**
 include: package:openfoodfacts_flutter_lints/flutter.yaml
