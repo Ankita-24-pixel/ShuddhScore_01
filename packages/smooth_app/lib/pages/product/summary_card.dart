@@ -17,6 +17,7 @@ import 'package:smooth_app/helpers/ui_helpers.dart';
 import 'package:smooth_app/knowledge_panel/knowledge_panels/knowledge_panel_page.dart';
 import 'package:smooth_app/knowledge_panel/knowledge_panels_builder.dart';
 import 'package:smooth_app/l10n/app_localizations.dart';
+import 'package:smooth_app/pages/family/family_product_card.dart';
 import 'package:smooth_app/pages/product/hideable_container.dart';
 import 'package:smooth_app/pages/product/product_field_editor.dart';
 import 'package:smooth_app/pages/product/product_incomplete_card.dart';
@@ -251,6 +252,8 @@ class _SummaryCardState extends State<SummaryCard> with UpToDateMixin {
 
     final Widget child = Column(
       children: <Widget>[
+        if (!widget.isFullVersion)
+          FamilyProductSummary(product: upToDateProduct),
         Padding(
           padding: padding,
           child: ProductTitleCard(

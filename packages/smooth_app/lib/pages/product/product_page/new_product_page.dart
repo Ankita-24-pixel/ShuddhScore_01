@@ -150,6 +150,9 @@ class ProductPageState extends State<ProductPage>
                     floating: false,
                   ),
                   SliverToBoxAdapter(
+                    child: FamilyProductSummary(product: upToDateProduct),
+                  ),
+                  SliverToBoxAdapter(
                     child: HeroMode(
                       enabled:
                           widget.withHeroAnimation &&

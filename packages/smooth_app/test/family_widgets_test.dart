@@ -26,6 +26,68 @@ void main() {
     child: MaterialApp(home: child),
   );
 
+  Product summaryFood({double sugar = 2}) => Product(
+    barcode: '123',
+    ingredientsText: 'Oats, sugar',
+    categoriesTags: <String>['en:foods'],
+    nutriments: Nutriments.empty()
+      ..setValue(Nutrient.sugars, PerSize.oneHundredGrams, sugar)
+      ..setValue(Nutrient.salt, PerSize.oneHundredGrams, 0.1)
+      ..setValue(Nutrient.saturatedFat, PerSize.oneHundredGrams, 1),
+  );
+
+  Finder resultColor(Color color) => find.byWidgetPredicate(
+    (Widget widget) =>
+        widget is Container &&
+        widget.decoration is BoxDecoration &&
+        (widget.decoration! as BoxDecoration).color == color,
+  );
+
+  testWidgets(
+    'top summary shows each name with an individual red or green result',
+    (WidgetTester tester) async {
+      await profiles.save(name: 'Toddler', age: 1);
+      await profiles.save(name: 'Parent', age: 30);
+      await tester.pumpWidget(
+        app(Scaffold(body: FamilyProductSummary(product: summaryFood()))),
+      );
+      expect(find.text('Family nutrition check'), findsOneWidget);
+      expect(find.text('Toddler · 1\nLimit or avoid'), findsOneWidget);
+      expect(
+        find.text('Parent · 30\nNo age-related concern found'),
+        findsOneWidget,
+      );
+      expect(resultColor(const Color(0xFFB3261E)), findsOneWidget);
+      expect(resultColor(const Color(0xFF176B36)), findsOneWidget);
+      // The first section contains family results, not the product's label facts.
+      expect(find.textContaining('Sugars'), findsNothing);
+      expect(tester.takeException(), isNull);
+    },
+  );
+
+  testWidgets(
+    'top summary refreshes between foods and keeps missing data grey',
+    (WidgetTester tester) async {
+      await profiles.save(name: 'Parent', age: 30);
+      Future<void> show(Product product) => tester.pumpWidget(
+        app(Scaffold(body: FamilyProductSummary(product: product))),
+      );
+      await show(summaryFood());
+      expect(resultColor(const Color(0xFF176B36)), findsOneWidget);
+      await show(summaryFood(sugar: 40));
+      expect(resultColor(const Color(0xFFB3261E)), findsOneWidget);
+      expect(resultColor(const Color(0xFF176B36)), findsNothing);
+      await show(Product(barcode: '456'));
+      expect(find.text('Parent · 30\nNot enough information'), findsOneWidget);
+      expect(resultColor(const Color(0xFF545B64)), findsOneWidget);
+      expect(resultColor(const Color(0xFF176B36)), findsNothing);
+      expect(resultColor(const Color(0xFFB3261E)), findsNothing);
+      await show(Product()..productType = ProductType.beauty);
+      expect(find.text('Family nutrition check'), findsNothing);
+      expect(tester.takeException(), isNull);
+    },
+  );
+
   testWidgets('form validates, saves and edits a member', (
     WidgetTester tester,
   ) async {

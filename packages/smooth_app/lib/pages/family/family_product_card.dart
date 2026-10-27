@@ -22,8 +22,13 @@ IconData _icon(FamilySuitability status) => switch (status) {
 
 /// Compact per-person results for product search and history lists.
 class FamilyProductChips extends StatelessWidget {
-  const FamilyProductChips({required this.product, super.key});
+  const FamilyProductChips({
+    required this.product,
+    this.showLabelFacts = true,
+    super.key,
+  });
   final Product product;
+  final bool showLabelFacts;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +44,10 @@ class FamilyProductChips extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          _FamilyLabelFacts(product: product),
-          const SizedBox(height: 8),
+          if (showLabelFacts) ...<Widget>[
+            _FamilyLabelFacts(product: product),
+            const SizedBox(height: 8),
+          ],
           Wrap(
             spacing: 8,
             runSpacing: 8,
@@ -90,6 +97,54 @@ class FamilyProductChips extends StatelessWidget {
             }).toList(),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// The first product-detail section, with the saved members and their results.
+class FamilyProductSummary extends StatelessWidget {
+  const FamilyProductSummary({required this.product, super.key});
+  final Product product;
+
+  @override
+  Widget build(BuildContext context) {
+    final FamilyProfiles? profiles = context.watch<FamilyProfiles?>();
+    if (profiles == null ||
+        profiles.members.isEmpty ||
+        (product.productType != null &&
+            product.productType != ProductType.food)) {
+      return const SizedBox.shrink();
+    }
+    return Card(
+      margin: const EdgeInsets.all(12),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                const Expanded(
+                  child: Text(
+                    'Family nutrition check',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                IconButton(
+                  tooltip: 'Manage family',
+                  icon: const Icon(Icons.edit_outlined),
+                  onPressed: () => openFamilyMembers(context),
+                ),
+              ],
+            ),
+            FamilyProductChips(product: product, showLabelFacts: false),
+            const SizedBox(height: 12),
+            const Text(
+              'Green: no concern found · Red: limit or avoid · Grey: not enough information',
+            ),
+          ],
+        ),
       ),
     );
   }
